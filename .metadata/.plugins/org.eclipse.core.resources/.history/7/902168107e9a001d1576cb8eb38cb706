@@ -1,0 +1,28 @@
+package br.com.project.palavra.caca;
+
+public class HowToPlay extends Menu{
+
+	public void howToPlay() {
+		
+		System.out.println(lines+"\n|            COMO JOGAR!            |\n"+lines);
+		System.out.println("| Bem vindo ao jogo Caca - Palavras |\n"+lines
+				+ "\n| O intuito deste jogo é estimular  |\n"
+				+ "| sua mente a encontrar todas as    |\n"
+				+ "| palavras do tabuleiro.            |\n"
+				+ "| São um total de 3 palavras que    |\n"
+				+ "| apareceram assim que voce iniciar |\n"
+				+ "| o jogo, cada tentativa errada ou  |\n"
+				+ "| correta ira ser contada e sera    |\n"
+				+ "| mostrada assim que voce finalizar |\n"
+				+ "| o jogo.                           |\n"
+				+ "| Para jogar e simples, sera        |\n"
+				+ "| solicitado a posicao inicial e    |\n"
+				+ "| final de cada palavra, seguido    |\n"
+				+ "| pela colunaALFABETICA, e a linha  |\n"
+				+ "| NUMERICA, caso tenha acertado,    |\n"
+				+ "| recebera um ponto e a jogada sera |\n"
+				+ "| contabilizada. BOM JOGO!");
+		
+	}
+
+}

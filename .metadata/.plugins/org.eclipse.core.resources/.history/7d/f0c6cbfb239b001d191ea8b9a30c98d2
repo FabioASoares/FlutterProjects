@@ -1,0 +1,101 @@
+package br.com.project.palavra.caca.gameFunctions;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Random;
+
+public class NewGame{
+	
+	String headLines = "-------------------------------------------";
+	
+	public Character[][] tableGame = new Character[10][10];
+	public Map<String, Character[][]> findWord = new LinkedHashMap<>();
+
+	public void newGame(){
+		
+		String alfabeticColunm = "   | A | B | C | D | E | F | G | H | I | J ";
+		
+		
+		System.out.println(headLines + "\n|  C A C A - P A L A V R A S  -  LP - OO  |");
+		System.out.println(headLines + "\n| E N C O N T R E   A S   P A L A V R A S |");
+		System.out.println(headLines + "\n|     (1) REFLECTION  *  (2) LAMBDA  *  (3) THREAD    |");
+		System.out.println("|            (4) WRAPPER  *  (5) STRING           |");
+		System.out.println(headLines + "\n" + alfabeticColunm+ "\n" +headLines);
+		System.out.println(headLines);
+		
+		Integer numericLine = 0;
+		
+		for(Integer line = 0; line < this.tableGame.length; line++) {
+			numericLine = numericLine+1;
+			if(numericLine<10) {
+				System.out.print("0"+numericLine+" ");
+			}
+			if(numericLine==10) {
+				System.out.print(numericLine+" ");
+			}
+			
+			for(Integer colunm = 0; colunm < this.tableGame[line].length; colunm++) {
+				// Random - Completa o tabuleiro com letras aleatórias
+				Random random = new Random();
+				char caractereRandom = (char) (random.nextInt(26) + 'A');
+				tableGame[line][colunm] = caractereRandom;
+				
+				// PALAVRA LAMBDA
+				tableGame[1][1] = 'A';
+				tableGame[2][1] = 'D';
+				tableGame[3][1] = 'B';
+				tableGame[4][1] = 'M';
+				tableGame[5][1] = 'A';
+				tableGame[6][1] = 'L';
+				
+				// PALAVRA WRAPPER
+				
+				tableGame[9][0] = 'W';
+				tableGame[9][1] = 'R';
+				tableGame[9][2] = 'A';
+				tableGame[9][3] = 'P';
+				tableGame[9][4] = 'P';
+				tableGame[9][5] = 'E';
+				tableGame[9][6] = 'R';
+				
+				// PALAVRA REFLECTION
+				
+				tableGame[0][8] = 'R';
+				tableGame[1][8] = 'E';
+				tableGame[2][8] = 'F';
+				tableGame[3][8] = 'L';
+				tableGame[4][8] = 'E';
+				tableGame[5][8] = 'C';
+				tableGame[6][8] = 'T';
+				tableGame[7][8] = 'I';
+				tableGame[8][8] = 'O';
+				tableGame[9][8] = 'N';
+				
+				// PALAVRA STRING
+				
+				tableGame[7][9] = 'S';
+				tableGame[5][7] = 'R';
+				tableGame[4][6] = 'I';
+				tableGame[3][5] = 'N';
+				tableGame[2][4] = 'G';
+				
+				// PALAVRA THREAD
+				
+				tableGame[6][7] = 'H';
+				tableGame[6][6] = 'R';
+				tableGame[6][5] = 'E';
+				tableGame[6][4] = 'A';
+				tableGame[6][3] = 'D';
+				
+				
+				
+				System.out.print("| "+tableGame[line][colunm]+" ");
+				
+			}
+			System.out.println();
+			System.out.println(headLines);
+		}
+		
+	}
+
+}

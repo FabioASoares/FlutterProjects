@@ -1,0 +1,56 @@
+package br.com.project.palavra.caca;
+
+import java.util.Scanner;
+
+import br.com.project.palavra.caca.gameFunctions.NewGame;
+
+public class Menu {
+	
+	public static String lines = " - - - - - - - - - - - - - - - - - -";
+	
+	public static void main(String[] args) {
+		
+		// Mensagem de bem-vindo ao jogo
+		
+		System.out.println(lines+"\n| Bem vindo ao jogo CACA - PALAVRAS |\n"+lines);
+		
+		menu();
+		
+	}
+	public static void menu() {
+		
+		// Navegação pelo menu principal com as opções de iniciar novo jogo, como jogar e encerrar
+		
+		System.out.println("|    Navegue pelas opcoes do menu   | \n"+lines);
+		System.out.println("|  1 - Novo Jogo");
+		System.out.println("|  2 - Como Jogar");
+		System.out.println("|  3 - Encerrar\n"+lines);
+		
+		Scanner scan = new Scanner(System.in);
+		int menuOption = scan.nextInt();
+		
+		switch(menuOption) {
+		case 1: 
+			NewGame startToPlay = new NewGame();
+			startToPlay.newGame();
+			break;
+		case 2:
+			HowToPlay help = new HowToPlay();
+			help.howToPlay();
+			break;
+		case 3:
+			System.out.println(lines+"\n|             Ate logo!             |\n"+lines);
+			System.exit(0);
+			break;
+		default:
+			System.out.println(lines+"\n| Opa! Nao existe essa opcao        |\n"+lines);
+			menu();
+			break;
+		}
+		
+			
+		scan.close();
+		
+	}
+	
+}

@@ -1,0 +1,19 @@
+package br.com.project.palavra.caca.gameFunctions;
+
+public class WordFounded extends ValidationWord{
+	public void changeTable() {
+		if(reflectionFounded == true) {
+			NewGame.tableGame[0][8] = "*";
+			NewGame.tableGame[1][8] = "*";
+			NewGame.tableGame[2][8] = "*";
+			NewGame.tableGame[3][8] = "*";
+			NewGame.tableGame[4][8] = "*";
+			NewGame.tableGame[5][8] = "*";
+			NewGame.tableGame[6][8] = "*";
+			NewGame.tableGame[7][8] = "*";
+			NewGame.tableGame[8][8] = "*";
+			NewGame.tableGame[9][8] = "*";
+			
+		}
+	}
+}

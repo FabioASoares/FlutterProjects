@@ -1,0 +1,11 @@
+package br.com.project.palavra.caca;
+
+public class HowToPlay extends Menu{
+
+	public void howToPlay() {
+		
+		System.out.println(lines+"|       COMO JOGAR!      |"+lines);
+		
+	}
+
+}

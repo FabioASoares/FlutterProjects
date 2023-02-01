@@ -1,0 +1,46 @@
+package br.com.project.palavra.caca;
+
+import java.util.Scanner;
+
+public class Menu {
+	
+	static String lines = " - - - - - - - - - - - - - - - - - -";
+	
+	public static void main(String[] args) {
+		
+		// Mensagem de bem-vindo ao jogo
+		
+		System.out.println(lines+"\n| Bem vindo ao jogo CAÇA - PALAVRAS |\n"+lines);
+		System.out.println("|    Navegue pelas opções do menu   | \n"+lines);
+		menu();
+		
+	}
+	public static void menu() {
+		
+		System.out.println("|  1 - Novo Jogo");
+		System.out.println("|  2 - Como Jogar");
+		System.out.println("|  3 - Encerrar\n"+lines);
+		
+		Scanner ler = new Scanner(System.in);
+		int opcaoMenu = ler.nextInt();
+		
+		switch(opcaoMenu) {
+		case 1: 
+			NewGame startToPlay = new NewGame();
+			startToPlay.newGame();
+			break;
+		case 2:
+			HowToPlay help = new HowToPlay();
+			help.howToPlay();
+			break;
+		case 3:
+			System.out.println("|            Ate logo!            |");
+			System.exit(0);
+		}
+		
+			
+		
+		
+	}
+	
+}

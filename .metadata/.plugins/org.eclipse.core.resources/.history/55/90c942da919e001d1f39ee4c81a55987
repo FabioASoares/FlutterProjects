@@ -1,0 +1,75 @@
+package br.com.project.palavra.caca.game_functions;
+
+import java.util.Random;
+
+public class NewGame extends IncludedWords{
+	
+	public static String headLines = "-------------------------------------------";
+	
+	public static String[][] tableGame = new String[10][10];
+	
+
+	public void newGame(){
+		
+		
+		String alfabeticColunm = "   | A | B | C | D | E | F | G | H | I | J ";
+		
+		
+		System.out.println(headLines + "\n|  C A C A - P A L A V R A S  -  LP - OO  |");
+		System.out.println(headLines + "\n| E N C O N T R E   A S   P A L A V R A S |");
+		System.out.println(headLines + "\n|  1 - REFLECTION  2 - LAMBDA  3 - THREAD |");
+		System.out.println("|         4 - WRAPPER  5 - STRING         |");
+		System.out.println(headLines + "\n" + alfabeticColunm+ "\n" +headLines);
+		System.out.println(headLines);
+		
+		Integer numericLine = 0;
+		
+		for(Integer line = 0; line < NewGame.tableGame.length; line++) {
+			Random random = new Random();
+			numericLine = numericLine+1;
+			if(numericLine<10) {
+				System.out.print("0"+numericLine+" ");
+			}
+			if(numericLine==10) {
+				System.out.print(numericLine+" ");
+			}
+			
+			for(Integer colunm = 0; colunm < NewGame.tableGame[line].length; colunm++) {
+				// Random - Completa o tabuleiro com letras aleatórias
+				
+				char randomChar = (char) random.nextInt(65,90);
+				NewGame.tableGame[line][colunm] = String.valueOf(randomChar);
+				
+				// PALAVRA LAMBDA
+				if(Boolean.FALSE.equals(lambdaFounded)) {
+					getLambdaFounded();
+				}
+				// PALAVRA WRAPPER
+				if(Boolean.FALSE.equals(wrapperFounded)) {
+					getWrapperFounded();
+				}
+				// PALAVRA REFLECTION
+//				if(Boolean.FALSE.equals(reflectionFounded)) {
+//					getReflectionFounded();
+//				}
+				addWord(8, 9, "vertical", "REFLECTION");
+				
+				// PALAVRA STRING
+				if(Boolean.FALSE.equals(stringFounded)) {
+					getStringFounded();
+				}
+				// PALAVRA THREAD
+				if(Boolean.FALSE.equals(threadFounded)) {
+					getThreadFounded();
+				}
+				
+				System.out.print("| "+tableGame[line][colunm]+" ");
+				
+			}
+			System.out.println();
+			System.out.println(headLines);
+		}
+		IncludedWords addNew = new IncludedWords();
+		addNew.includeWord();
+	}
+}

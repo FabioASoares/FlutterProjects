@@ -1,0 +1,267 @@
+package br.com.project.palavra.caca.gameFunctions;
+
+import java.util.Scanner;
+
+import br.com.project.palavra.caca.Menu;
+
+public class ValidationWord extends IncludedWords{
+	Scanner scan = new Scanner(System.in);
+	public static Integer score = 0;
+	public static Integer attempts = 0;
+	public void endsGame() {
+		if(reflectionFounded && stringFounded && wrapperFounded && threadFounded && lambdaFounded == true) {
+			System.out.println("Todas as Palavras foram encontradas!");
+			System.out.println("Placar");
+			System.out.println("Total de jogadas: "+attempts);
+			System.out.println("Total de pontos:  "+score);
+			System.out.println("Deseja jogar novamente?");
+			System.out.println("| 1- Vamos nessa | 2 - Agora nao |");
+			Integer option = scan.nextInt();
+			if(option == 1) {
+				reflectionFounded = false;
+				lambdaFounded = false;
+				stringFounded = false;
+				wrapperFounded = false;
+				threadFounded = false;
+				attempts = 0;
+				
+				NewGame play = new NewGame();
+				play.newGame();
+			}
+			else if(option == 2) {
+				Menu menuOption = new Menu();
+				menuOption.menu();
+			}
+			else {
+				System.out.println("Opção incorreta");
+				endsGame();
+			}
+		}
+	}
+	
+	public void validatedWord() {
+		
+		endsGame();
+		
+		System.out.println("| DIGITE O NUMERO DA PALAVRA ENCONTRADA:  |");
+		System.out.print("| ");
+		Integer foundWord = scan.nextInt();
+		System.out.println(NewGame.headLines);
+		
+		String wordFounded;
+		String position;
+		
+		
+		
+		while(score < 5) {
+			switch(foundWord) {
+			case 1:
+				if(reflectionFounded == true) {
+					System.out.println("Opa, palavra já encontrada, tente novamente com outra palavra");
+					validatedWord();
+				}
+					else {
+					wordFounded = "Reflection";
+					
+					System.out.println("| PALAVRA ENCONTRADA: "+wordFounded+"          |");
+					System.out.println("| Linha e Coluna INICIAL da palavra:      |");
+					System.out.print("| ");
+					position = scan.next();
+					position.toLowerCase();
+					if(position.equals("01-I") && wordsIncluded.containsKey("01 I")) {
+						attempts = attempts +1;
+						System.out.println("| Linha e Coluna FINAL da palavra:        |");
+						System.out.print("| ");
+						position = scan.next();
+						
+						if(position.equals("10-I") && wordsIncluded.containsKey("10 I")) {
+							System.out.println("| Linha e Coluna FINAL da palavra:        |");
+							System.out.println("|   PARABENS! Você encontrou a palavra:   |"+wordFounded);
+							System.out.println("Você receberá 1 ponto por encontrá-la");
+							score = score + 1;
+							attempts = attempts +1;
+							reflectionFounded = true;
+							WordFounded change = new WordFounded();
+							change.changeTable();
+							
+						}
+						else {
+							System.out.println("Parece que você errou a segunda posição, tente novamente!");
+							attempts = attempts + 1;
+							validatedWord();					
+						}
+					}
+					else {
+						System.out.println("| Hmm, a posição esta incorreta, tente novamente!");
+						attempts = attempts + 1;
+						validatedWord();
+					}
+				}
+				break;
+				
+			case 2:
+				if(lambdaFounded == true) {
+					System.out.println("Opa, palavra já encontrada, tente novamente com outra palavra");
+					validatedWord();
+				}
+					else {
+						wordFounded = "Lambda";
+						System.out.println("A palavra que você encontrou é: "+wordFounded);
+						System.out.println("Digite a linha e coluna onde inicia a palavra "+ wordFounded);
+						position = scan.next();
+						position.toLowerCase();
+						if(position.equals("07-B") && wordsIncluded.containsKey("07 B")) {
+							attempts = attempts +1;
+							System.out.println("Agora digite onde a palavra "+wordFounded+" acaba");
+							position = scan.next();
+							
+							if(position.equals("02-B") && wordsIncluded.containsKey("02 B")) {
+								System.out.println("PARABENS! Você encontrou a palavra: "+wordFounded);
+								System.out.println("Você receberá 1 ponto por encontrá-la");
+								score = score + 1;
+								attempts = attempts +1;
+								lambdaFounded = true;
+								WordFounded change = new WordFounded();
+								change.changeTable();
+								
+							}
+							else {
+								attempts = attempts +1;
+								System.out.println("Parece que você errou a segunda posição, tente novamente!");
+								validatedWord();						
+							}
+						}
+						else {
+							attempts = attempts +1;
+							System.out.println("| Hmm, a posição esta incorreta, tente novamente!");
+							validatedWord();
+						}
+					}
+				break;
+			case 3:
+				if(threadFounded == true) {
+					System.out.println("Opa, palavra já encontrada, tente novamente com outra palavra");
+					validatedWord();
+				}
+				else {
+					wordFounded = "Thread";
+					System.out.println("A palavra que você encontrou é: "+wordFounded);
+					System.out.println("Digite a linha e coluna onde inicia a palavra "+ wordFounded);
+					position = scan.next();
+					position.toLowerCase();
+					if(position.equals("07-I") && wordsIncluded.containsKey("07 I")) {
+						attempts = attempts +1;
+						System.out.println("Agora digite onde a palavra "+wordFounded+" acaba");
+						position = scan.next();
+						
+						if(position.equals("07-D") && wordsIncluded.containsKey("07 D")) {
+							attempts = attempts +1;
+							System.out.println("PARABENS! Você encontrou a palavra: "+wordFounded);
+							System.out.println("Você receberá 1 ponto por encontrá-la");
+							score = score + 1;
+							threadFounded = true;
+							WordFounded change = new WordFounded();
+							change.changeTable();
+							
+						}
+						else {
+							attempts = attempts +1;
+							System.out.println("Parece que você errou a segunda posição, tente novamente!");
+							validatedWord();						
+						}
+					}
+					else {
+						attempts = attempts +1;
+						System.out.println("| Hmm, a posição esta incorreta, tente novamente!");
+						validatedWord();
+					}
+				}
+				break;
+			case 4:
+				if(wrapperFounded == true) {
+					System.out.println("Opa, palavra já encontrada, tente novamente com outra palavra");
+					validatedWord();
+				}
+					else {
+					wordFounded = "Wrapper";
+					System.out.println("A palavra que você encontrou é: "+wordFounded);
+					System.out.println("Digite a linha e coluna onde inicia a palavra "+ wordFounded);
+					position = scan.next();
+					position.toLowerCase();
+					if(position.equals("10-A") && wordsIncluded.containsKey("10 A")) {
+						attempts = attempts +1;
+						System.out.println("Agora digite onde a palavra "+wordFounded+" acaba");
+						position = scan.next();
+						
+						if(position.equals("10-G") && wordsIncluded.containsKey("10 G")) {
+							System.out.println("PARABENS! Você encontrou a palavra: "+wordFounded);
+							System.out.println("Você receberá 1 ponto por encontrá-la");
+							score = score + 1;
+							attempts = attempts +1;
+							wrapperFounded = true;
+							WordFounded change = new WordFounded();
+							change.changeTable();
+							
+						}
+						else {
+							attempts = attempts +1;
+							System.out.println("Parece que você errou a segunda posição, tente novamente!");
+							validatedWord();						
+						}
+					}
+					else {
+						attempts = attempts +1;
+						System.out.println("| Hmm, a posição esta incorreta, tente novamente!");
+						validatedWord();
+					}
+				}
+				break;
+			case 5:
+				if(stringFounded == true) {
+					System.out.println("Opa, palavra já encontrada, tente novamente com outra palavra");
+					validatedWord();
+				}
+				else {
+					wordFounded = "String";
+					System.out.println("A palavra que você encontrou é: "+wordFounded);
+					System.out.println("Digite a linha e coluna onde inicia a palavra "+ wordFounded);
+					position = scan.next();
+					position.toLowerCase();
+					if(position.equals("08-J") && wordsIncluded.containsKey("08 J")) {
+						attempts = attempts +1;
+						System.out.println("Agora digite onde a palavra "+wordFounded+" acaba");
+						position = scan.next();
+						
+						if(position.equals("03-E") && wordsIncluded.containsKey("03 E")) {
+							System.out.println("PARABENS! Você encontrou a palavra: "+wordFounded);
+							System.out.println("Você receberá 1 ponto por encontrá-la");
+							score = score + 1;
+							attempts = attempts +1;
+							stringFounded = true;
+							WordFounded change = new WordFounded();
+							change.changeTable();
+							
+						}
+						else {
+							attempts = attempts +1;
+							System.out.println("Parece que você errou a segunda posição, tente novamente!");
+							validatedWord();						
+						}
+					}
+					else {
+						attempts = attempts +1;
+						System.out.println("| Hmm, a posição esta incorreta, tente novamente!");
+						validatedWord();
+					}
+				}
+				break;
+			default:
+				System.out.println("| Hmm. Parece que não temos essa palavra  |");
+				System.out.println("| Digite corretamente o número da palavra |");
+				validatedWord();
+			}
+		}
+		
+	}
+	
+}

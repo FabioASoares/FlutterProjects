@@ -1,0 +1,13 @@
+package br.com.project.palavra.caca.gameFunctions;
+
+public class InsertWords extends NewGame{
+	
+	
+	public void addWords() {
+		boolean valida = false;
+		
+		if(valida == false) {
+			NewGame.tableGame[1][1] = '*';
+		}
+	}
+}

@@ -1,0 +1,20 @@
+package br.com.project.palavra.caca.gameFunctions;
+
+public class InsertWords extends NewGame{
+	
+	
+	public void addWords() {
+
+		Character[][] lambda = new Character[6][1];
+		tableGame[1][1] = 'A';
+		tableGame[2][1] = 'D';
+		tableGame[3][1] = 'B';
+		tableGame[4][1] = 'M';
+		tableGame[5][1] = 'A';
+		tableGame[6][1] = 'L';
+		NewGame.findWord.put("LAMBDA", lambda);
+		System.out.println(lambda[3][1]);
+		
+		
+	}
+}

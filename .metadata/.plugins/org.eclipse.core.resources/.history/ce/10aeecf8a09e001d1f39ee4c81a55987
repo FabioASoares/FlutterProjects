@@ -1,0 +1,222 @@
+package br.com.project.palavra.caca.game_functions;
+
+import java.util.Scanner;
+
+import br.com.project.palavra.caca.Menu;
+
+public class ValidationWord extends IncludedWords{
+	private static final String initialLine = "| Linha e Coluna INICIAL da palavra:      |";
+	private static final String finalLine = "| Linha e Coluna FINAL da palavra:        |";
+	static Scanner scan = new Scanner(System.in);
+	static Integer score = 0;
+	static Integer attempts = 0;
+	static String wordFounded;
+	
+	public static void validatedWord() {
+		
+		EndingGame endingGame = new EndingGame();
+		endingGame.endsGame();
+		
+		System.out.println("| DIGITE O NUMERO DA PALAVRA ENCONTRADA:  |");
+		System.out.print("| ");
+		String foundWord = scan.next();
+		System.out.println(NewGame.headLines);
+		
+		String position;
+		
+	switch(foundWord) {
+		case "1":
+		if(Boolean.TRUE.equals(reflectionFounded)) {
+			System.out.println(NewGame.headLines+"\n| P A L A V R A  J A  E N C O N T R A D A |\n"+NewGame.headLines);
+			validatedWord();
+			}
+		else {
+				wordFounded = "REFLECTION";
+	
+				System.out.println("|     PALAVRA ENCONTRADA: "+wordFounded+"      |\n"+NewGame.headLines);
+				System.out.println(initialLine);
+				position = scan.next();
+				System.out.println(NewGame.headLines);
+		if(position.equals("01-I") && wordsIncluded.containsKey("01 I")) {
+						attempts = attempts +1;
+						System.out.println(finalLine);
+						position = scan.next();
+						System.out.println(NewGame.headLines);
+						
+						if(position.equals("10-I") && wordsIncluded.containsKey("10 I")) {
+							congratulatesPlayer();
+							reflectionFounded = true;
+							NewGame play = new NewGame();
+							play.newGame();
+							
+						}
+						else {
+							notifyPlayer();					
+						}
+					}
+					else {
+						notifyPlayer();
+					}
+				}
+				break;
+				
+			case "2":
+				if(Boolean.TRUE.equals(lambdaFounded)) {
+					System.out.println(NewGame.headLines+"\n| P A L A V R A  J A  E N C O N T R A D A |\n"+NewGame.headLines);
+					validatedWord();
+				}
+					else {
+					wordFounded = "LAMBDA";
+					
+					System.out.println("|       PALAVRA ENCONTRADA: "+wordFounded+"        |\n"+NewGame.headLines);
+					System.out.println(initialLine);
+					position = scan.next();
+					System.out.println(NewGame.headLines);
+					if(position.equals("07-B") && wordsIncluded.containsKey("07 B")) {
+						attempts = attempts +1;
+						System.out.println(finalLine);
+						position = scan.next();
+						System.out.println(NewGame.headLines);
+						
+						if(position.equals("02-B") && wordsIncluded.containsKey("02 B")) {
+							congratulatesPlayer();
+							lambdaFounded = true;
+							NewGame play = new NewGame();
+							play.newGame();
+							
+						}
+						else {
+							notifyPlayer();					
+						}
+					}
+					else {
+						notifyPlayer();
+					}
+				}
+				break;
+			case "3":
+				if(Boolean.TRUE.equals(threadFounded)) {
+					System.out.println(NewGame.headLines+"\n| P A L A V R A  J A  E N C O N T R A D A |\n"+NewGame.headLines);
+					validatedWord();
+				}
+					else {
+					wordFounded = "THREAD";
+					
+					System.out.println("|       PALAVRA ENCONTRADA: "+wordFounded+"        |\n"+NewGame.headLines);
+					System.out.println(initialLine);
+					position = scan.next();
+					System.out.println(NewGame.headLines);
+					if(position.equals("07-I") && wordsIncluded.containsKey("07 I")) {
+						attempts = attempts +1;
+						System.out.println(finalLine);
+						position = scan.next();
+						System.out.println(NewGame.headLines);
+						
+						if(position.equals("07-D") && wordsIncluded.containsKey("07 D")) {
+							congratulatesPlayer();
+							threadFounded = true;
+							NewGame play = new NewGame();
+							play.newGame();
+							
+						}
+						else {
+							notifyPlayer();				
+						}
+					}
+					else {
+						notifyPlayer();
+					}
+				}
+				break;
+			case "4":
+				if(Boolean.TRUE.equals(wrapperFounded)) {
+					System.out.println(NewGame.headLines+"\n| P A L A V R A  J A  E N C O N T R A D A |\n"+NewGame.headLines);
+					validatedWord();
+				}
+					else {
+					wordFounded = "WRAPPER";
+					
+					System.out.println("|       PALAVRA ENCONTRADA: "+wordFounded+"       |\n"+NewGame.headLines);
+					System.out.println(initialLine);
+					position = scan.next();
+					System.out.println(NewGame.headLines);
+					if(position.equals("10-A") && wordsIncluded.containsKey("10 A")) {
+						attempts = attempts +1;
+						System.out.println(finalLine);
+						position = scan.next();
+						System.out.println(NewGame.headLines);
+						
+						if(position.equals("10-G") && wordsIncluded.containsKey("10 G")) {
+							congratulatesPlayer();
+							wrapperFounded = true;
+							NewGame play = new NewGame();
+							play.newGame();
+							
+						}
+						else {
+							notifyPlayer();					
+						}
+					}
+					else {
+						notifyPlayer();
+					}
+				}
+				break;
+			case "5":
+				if(Boolean.TRUE.equals(stringFounded)) {
+					System.out.println(NewGame.headLines+"\n| P A L A V R A  J A  E N C O N T R A D A |\n"+NewGame.headLines);
+					validatedWord();
+				}
+					else {
+					wordFounded = "STRING";
+					
+					System.out.println("|        PALAVRA ENCONTRADA: "+wordFounded+"       |\n"+NewGame.headLines);
+					System.out.println(initialLine);
+					position = scan.next();
+					System.out.println(NewGame.headLines);
+					if(position.equals("08-J") && wordsIncluded.containsKey("08 J")) {
+						attempts = attempts +1;
+						System.out.println(finalLine);
+						position = scan.next();
+						System.out.println(NewGame.headLines);
+						
+						if(position.equals("03-E") && wordsIncluded.containsKey("03 E")) {
+							congratulatesPlayer();
+							stringFounded = true;
+							NewGame play = new NewGame();
+							play.newGame();
+							
+						}
+						else {
+							notifyPlayer();					
+						}
+					}
+					else {
+						notifyPlayer();
+					}
+				}
+				break;
+			default:
+				System.out.println("| Hmm. Parece que nao temos essa palavra  |");
+				System.out.println("| Digite corretamente o numero da palavra |\n"+NewGame.headLines);
+				validatedWord();
+			}
+		
+		
+	}
+	
+	public static void congratulatesPlayer() {
+		
+		System.out.println("|   PARABENS! VocE encontrou a palavra:   |");
+		System.out.println(NewGame.headLines+"\n| PALAVRA: "+wordFounded+"\n"+NewGame.headLines);
+		System.out.println("|  Voce recebera 2 ponto por encontra-la  |");
+		score = score + 2;
+		attempts = attempts +1;
+		
+	}
+	public static void notifyPlayer() {
+		System.out.println(NewGame.headLines+"\n| Posicao INCORRETA - Tente novamente     |\n"+NewGame.headLines);
+		attempts = attempts + 1;
+		validatedWord();
+	}
+}

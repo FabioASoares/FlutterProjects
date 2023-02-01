@@ -1,0 +1,65 @@
+package br.com.project.palavra.caca.gameFunctions;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class InsertWords extends NewGame{
+	public static Map<String, String> lambdaMap = new HashMap<String, String>();
+	public void addWords() {
+		
+		// PALAVRA LAMBDA
+		
+		lambdaMap.put("07 B", "L");
+		lambdaMap.put("06 B", "A");
+		lambdaMap.put("05 B", "M");
+		lambdaMap.put("04 B", "B");
+		lambdaMap.put("03 B", "D");
+		lambdaMap.put("02 B", "A");
+//		
+//		// PALAVRA STRING
+//		Character[][] string = new Character[7][9];
+//		tableGame[7][9] = 'S';
+//		tableGame[6][8] = 'T';
+//		tableGame[5][7] = 'R';
+//		tableGame[4][6] = 'I';
+//		tableGame[3][5] = 'N';
+//		tableGame[2][4] = 'G';
+//		NewGame.findWord.put("STRING", string);
+//		
+//		// PALAVRA WRAPPER
+//		Character[][] wrapper = new Character[9][6];
+//		tableGame[9][0] = 'W';
+//		tableGame[9][1] = 'R';
+//		tableGame[9][2] = 'A';
+//		tableGame[9][3] = 'P';
+//		tableGame[9][4] = 'P';
+//		tableGame[9][5] = 'E';
+//		tableGame[9][6] = 'R';
+//		NewGame.findWord.put("WRAPPER", wrapper);
+//		
+//		// PALAVRA REFLECTION
+//		Character[][] reflection = new Character[9][8];
+//		tableGame[0][8] = 'R';
+//		tableGame[1][8] = 'E';
+//		tableGame[2][8] = 'F';
+//		tableGame[3][8] = 'L';
+//		tableGame[4][8] = 'E';
+//		tableGame[5][8] = 'C';
+//		tableGame[6][8] = 'T';
+//		tableGame[7][8] = 'I';
+//		tableGame[8][8] = 'O';
+//		tableGame[9][8] = 'N';
+//		NewGame.findWord.put("REFLECTION", reflection);
+//		
+//		// PALAVRA THREAD
+//		Character[][] thread = new Character[6][8];
+//		tableGame[6][8] = 'T';
+//		tableGame[6][7] = 'H';
+//		tableGame[6][6] = 'R';
+//		tableGame[6][5] = 'E';
+//		tableGame[6][4] = 'A';
+//		tableGame[6][3] = 'D';
+//		NewGame.findWord.put("THREAD", thread);
+	}
+
+}

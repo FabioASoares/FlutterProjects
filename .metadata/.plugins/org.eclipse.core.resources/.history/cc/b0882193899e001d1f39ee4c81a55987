@@ -1,0 +1,123 @@
+package br.com.project.palavra.caca.game_functions;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class IncludedWords {
+	static Map<String, String> wordsIncluded = new HashMap<String, String>();
+	
+	//Metodos reflectionFounded
+	static Boolean reflectionFounded = false;
+	public static Boolean getReflectionFounded() {
+		IncludedWords.wordsIncluded.put("01 I", "R");
+		IncludedWords.wordsIncluded.put("02 I", "E");
+		IncludedWords.wordsIncluded.put("03 I", "F");
+		IncludedWords.wordsIncluded.put("04 I", "L");
+		IncludedWords.wordsIncluded.put("05 I", "E");
+		IncludedWords.wordsIncluded.put("06 I", "C");
+		IncludedWords.wordsIncluded.put("07 I", "T");
+		IncludedWords.wordsIncluded.put("08 I", "I");
+		IncludedWords.wordsIncluded.put("09 I", "O");
+		IncludedWords.wordsIncluded.put("10 I", "N");
+		return reflectionFounded;
+	}
+	public static void setReflectionFounded(Boolean reflectionFounded) {
+		IncludedWords.reflectionFounded = reflectionFounded;
+		NewGame.tableGame[0][8] = "R";
+		NewGame.tableGame[1][8] = "E";
+		NewGame.tableGame[2][8] = "F";
+		NewGame.tableGame[3][8] = "L";
+		NewGame.tableGame[4][8] = "E";
+		NewGame.tableGame[5][8] = "C";
+		NewGame.tableGame[7][8] = "I";
+		NewGame.tableGame[8][8] = "O";
+		NewGame.tableGame[9][8] = "N";
+	}
+	
+	// Metodos lambdaFounded
+	static Boolean lambdaFounded = false;
+	public static Boolean getLambdaFounded() {
+		return lambdaFounded;
+	}
+	public static void setLambdaFounded(Boolean lambdaFounded) {
+		IncludedWords.lambdaFounded = lambdaFounded;
+	}
+	
+	// Metodos stringFounded
+	static Boolean stringFounded = false;
+	
+	public static Boolean getStringFounded() {
+		return stringFounded;
+	}
+	public static void setStringFounded(Boolean stringFounded) {
+		IncludedWords.stringFounded = stringFounded;
+	}
+	
+	// Metodos wrapperFounded
+	static Boolean wrapperFounded = false;
+	public static Boolean getWrapperFounded() {
+		return wrapperFounded;
+	}
+	public static void setWrapperFounded(Boolean wrapperFounded) {
+		IncludedWords.wrapperFounded = wrapperFounded;
+	}
+	
+	// Metodos threadFounded
+	static Boolean threadFounded = false;
+	public static Boolean getThreadFounded() {
+		return threadFounded;
+	}
+	public static void setThreadFounded(Boolean threadFounded) {
+		IncludedWords.threadFounded = threadFounded;
+	}
+	
+	// Inclusão de palavras no map
+	public static Map<String, String> getWordsIncluded() {
+		return wordsIncluded;
+	}	
+	
+	public static void setWordsIncluded(Map<String, String> wordsIncluded) {
+		IncludedWords.wordsIncluded = wordsIncluded;
+		// Palavra Reflection
+				
+				
+				// Palavra Lambda
+				IncludedWords.wordsIncluded.put("07 B","L");
+				IncludedWords.wordsIncluded.put("06 B","A");
+				IncludedWords.wordsIncluded.put("05 B","M");
+				IncludedWords.wordsIncluded.put("04 B","B");
+				IncludedWords.wordsIncluded.put("03 B","D");
+				IncludedWords.wordsIncluded.put("02 B","A");
+				
+				// Palavra Thread
+				
+				IncludedWords.wordsIncluded.put("07 H", "H");
+				IncludedWords.wordsIncluded.put("07 G", "R");
+				IncludedWords.wordsIncluded.put("07 F", "E");
+				IncludedWords.wordsIncluded.put("07 E", "A");
+				IncludedWords.wordsIncluded.put("07 D", "D");
+				
+				// Palavra Wrapper
+				IncludedWords.wordsIncluded.put("10 A", "W");
+				IncludedWords.wordsIncluded.put("10 B", "R");
+				IncludedWords.wordsIncluded.put("10 C", "A");
+				IncludedWords.wordsIncluded.put("10 D", "P");
+				IncludedWords.wordsIncluded.put("10 E", "P");
+				IncludedWords.wordsIncluded.put("10 F", "E");
+				IncludedWords.wordsIncluded.put("10 G", "R");
+				
+				//
+				IncludedWords.wordsIncluded.put("08 J", "S");
+				IncludedWords.wordsIncluded.put("06 H", "R");
+				IncludedWords.wordsIncluded.put("05 G", "I");
+				IncludedWords.wordsIncluded.put("04 F", "N");
+				IncludedWords.wordsIncluded.put("03 E", "G");
+		
+	}
+	
+	void includeWord(){
+		ValidationWord validated = new ValidationWord();
+		validated.validatedWord();
+		
+	}
+}

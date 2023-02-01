@@ -1,0 +1,15 @@
+package br.com.project.palavra.caca.gameFunctions;
+
+public class IncludedWords {
+	public void includeWord(){
+		
+		// Palavra Lambda
+		NewGame.wordsIncluded.put("07 B","L");
+		NewGame.wordsIncluded.put("06 B","A");
+		NewGame.wordsIncluded.put("05 B","M");
+		NewGame.wordsIncluded.put("04 B","B");
+		NewGame.wordsIncluded.put("03 B","D");
+		NewGame.wordsIncluded.put("02 B","A");
+		
+	}
+}

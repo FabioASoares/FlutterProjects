@@ -1,0 +1,12 @@
+package br.com.project.palavra.caca;
+
+public class HowToPlay extends Menu{
+
+	public void howToPlay() {
+		
+		System.out.println(lines+"\n|            COMO JOGAR!            |\n"+lines);
+		System.out.println("Bem vindo ao jogo Caca - Palavras, o intuito deste");
+		
+	}
+
+}

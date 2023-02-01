@@ -1,0 +1,14 @@
+package br.com.project.palavra.caca;
+
+
+public class Menu {
+	
+	String lines = "- - - - - - - - - - - - - - - - - -";
+	
+	public static void main(String[] args) {
+		
+		
+		
+	}
+	
+}

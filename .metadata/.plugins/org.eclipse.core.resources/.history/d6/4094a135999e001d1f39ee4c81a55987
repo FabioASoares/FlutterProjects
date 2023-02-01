@@ -1,0 +1,12 @@
+package br.com.project.palavra.caca.game_functions;
+
+public class EndingGame extends ValidationWord{
+	public void changeTable() {
+		
+		
+			NewGame play = new NewGame();
+			play.newGame();
+		
+		
+	}
+}

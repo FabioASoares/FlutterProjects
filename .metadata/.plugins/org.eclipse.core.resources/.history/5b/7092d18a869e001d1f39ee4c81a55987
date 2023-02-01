@@ -1,0 +1,96 @@
+package br.com.project.palavra.caca.game_functions;
+
+import java.util.Random;
+
+public class NewGame extends IncludedWords{
+	
+	public static String headLines = "-------------------------------------------";
+	
+	public static String[][] tableGame = new String[10][10];
+	
+
+	public void newGame(){
+		
+		
+		String alfabeticColunm = "   | A | B | C | D | E | F | G | H | I | J ";
+		
+		
+		System.out.println(headLines + "\n|  C A C A - P A L A V R A S  -  LP - OO  |");
+		System.out.println(headLines + "\n| E N C O N T R E   A S   P A L A V R A S |");
+		System.out.println(headLines + "\n|  1 - REFLECTION  2 - LAMBDA  3 - THREAD |");
+		System.out.println("|         4 - WRAPPER  5 - STRING         |");
+		System.out.println(headLines + "\n" + alfabeticColunm+ "\n" +headLines);
+		System.out.println(headLines);
+		
+		Integer numericLine = 0;
+		
+		for(Integer line = 0; line < NewGame.tableGame.length; line++) {
+			Random random = new Random();
+			numericLine = numericLine+1;
+			if(numericLine<10) {
+				System.out.print("0"+numericLine+" ");
+			}
+			if(numericLine==10) {
+				System.out.print(numericLine+" ");
+			}
+			
+			for(Integer colunm = 0; colunm < NewGame.tableGame[line].length; colunm++) {
+				// Random - Completa o tabuleiro com letras aleatórias
+				
+				char randomChar = (char) random.nextInt(65,90);
+				NewGame.tableGame[line][colunm] = String.valueOf(randomChar);
+				
+				tableGame[6][8] = "T";
+				
+				// PALAVRA LAMBDA
+				if(lambdaFounded==false) {
+					tableGame[1][1] = "A";
+					tableGame[2][1] = "D";
+					tableGame[3][1] = "B";
+					tableGame[4][1] = "M";
+					tableGame[5][1] = "A";
+					tableGame[6][1] = "L";
+				}
+				// PALAVRA WRAPPER
+				if(wrapperFounded==false) {
+					tableGame[9][0] = "W";
+					tableGame[9][1] = "R";
+					tableGame[9][2] = "A";
+					tableGame[9][3] = "P";
+					tableGame[9][4] = "P";
+					tableGame[9][5] = "E";
+					tableGame[9][6] = "R";
+				}
+				// PALAVRA REFLECTION
+				if(Boolean.TRUE.equals(reflectionFounded)) {
+					setReflectionFounded(reflectionFounded);
+				}
+				
+				
+				// PALAVRA STRING
+				if(stringFounded==false) {
+					tableGame[7][9] = "S";
+					tableGame[5][7] = "R";
+					tableGame[4][6] = "I";
+					tableGame[3][5] = "N";
+					tableGame[2][4] = "G";
+				}
+				// PALAVRA THREAD
+				if(threadFounded==false) {
+					tableGame[6][7] = "H";
+					tableGame[6][6] = "R";
+					tableGame[6][5] = "E";
+					tableGame[6][4] = "A";
+					tableGame[6][3] = "D";
+				}
+				
+				System.out.print("| "+tableGame[line][colunm]+" ");
+				
+			}
+			System.out.println();
+			System.out.println(headLines);
+		}
+		IncludedWords addNew = new IncludedWords();
+		addNew.includeWord();
+	}
+}

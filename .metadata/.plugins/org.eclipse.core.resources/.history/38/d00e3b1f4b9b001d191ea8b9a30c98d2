@@ -1,0 +1,103 @@
+package br.com.project.palavra.caca.gameFunctions;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Random;
+
+public class NewGame extends IncludedWords{
+	
+	String headLines = "-------------------------------------------";
+	
+	public static String[][] tableGame = new String[10][10];
+	
+
+	public void newGame(){
+		
+		
+		String alfabeticColunm = "   | A | B | C | D | E | F | G | H | I | J ";
+		
+		
+		System.out.println(headLines + "\n|  C A C A - P A L A V R A S  -  LP - OO  |");
+		System.out.println(headLines + "\n| E N C O N T R E   A S   P A L A V R A S |");
+		System.out.println(headLines + "\n|  1 - REFLECTION  2 - LAMBDA  3 - THREAD |");
+		System.out.println("|         4 - WRAPPER  5 - STRING         |");
+		System.out.println(headLines + "\n" + alfabeticColunm+ "\n" +headLines);
+		System.out.println(headLines);
+		
+		Integer numericLine = 0;
+		
+		for(Integer line = 0; line < NewGame.tableGame.length; line++) {
+			Random random = new Random();
+			numericLine = numericLine+1;
+			if(numericLine<10) {
+				System.out.print("0"+numericLine+" ");
+			}
+			if(numericLine==10) {
+				System.out.print(numericLine+" ");
+			}
+			
+			for(Integer colunm = 0; colunm < NewGame.tableGame[line].length; colunm++) {
+				// Random - Completa o tabuleiro com letras aleatórias
+				
+				char randomChar = (char) random.nextInt(65,90);
+				NewGame.tableGame[line][colunm] = String.valueOf(randomChar);
+				
+				// PALAVRA LAMBDA
+				
+				tableGame[1][1] = "A";
+				tableGame[2][1] = "D";
+				tableGame[3][1] = "B";
+				tableGame[4][1] = "M";
+				tableGame[5][1] = "A";
+				tableGame[6][1] = "L";
+				
+				// PALAVRA WRAPPER
+			
+				tableGame[9][0] = wordsIncluded.containsKey("10 A") ? "*" : "W";
+				tableGame[9][1] = wordsIncluded.containsKey("10 B") ? "*" : "R";
+				tableGame[9][2] = wordsIncluded.containsKey("10 C") ? "*" : "A";
+				tableGame[9][3] = wordsIncluded.containsKey("10 D") ? "*" : "P";
+				tableGame[9][4] = wordsIncluded.containsKey("10 E") ? "*" : "P";
+				tableGame[9][5] = wordsIncluded.containsKey("10 F") ? "*" : "E";
+				tableGame[9][6] = wordsIncluded.containsKey("10 G") ? "*" : "R";
+				
+				// PALAVRA REFLECTION
+				
+				tableGame[0][8] = wordsIncluded.containsKey("01 I") ? "*" : "R";
+				tableGame[1][8] = wordsIncluded.containsKey("02 I") ? "*" : "E";
+				tableGame[2][8] = wordsIncluded.containsKey("03 I") ? "*" : "F";
+				tableGame[3][8] = wordsIncluded.containsKey("04 I") ? "*" : "L";
+				tableGame[4][8] = wordsIncluded.containsKey("05 I") ? "*" : "E";
+				tableGame[5][8] = wordsIncluded.containsKey("06 I") ? "*" : "C";
+				tableGame[6][8] = wordsIncluded.containsKey("07 I") ? "*" : "T";
+				tableGame[7][8] = wordsIncluded.containsKey("08 I") ? "*" : "I";
+				tableGame[8][8] = wordsIncluded.containsKey("09 I") ? "*" : "O";
+				tableGame[9][8] = wordsIncluded.containsKey("10 I") ? "*" : "N";
+				
+				// PALAVRA STRING
+			
+				tableGame[7][9] = wordsIncluded.containsKey("08 J") ? "*" : "S";
+				tableGame[5][7] = wordsIncluded.containsKey("06 H") ? "*" : "R";
+				tableGame[4][6] = wordsIncluded.containsKey("05 G") ? "*" : "I";
+				tableGame[3][5] = wordsIncluded.containsKey("04 F") ? "*" : "N";
+				tableGame[2][4] = wordsIncluded.containsKey("03 E") ? "*" : "G";
+				
+				// PALAVRA THREAD
+				
+				tableGame[6][7] = wordsIncluded.containsKey("07 H") ? "*" : "H";
+				tableGame[6][6] = wordsIncluded.containsKey("07 G") ? "*" : "R";
+				tableGame[6][5] = wordsIncluded.containsKey("07 F") ? "*" : "E";
+				tableGame[6][4] = wordsIncluded.containsKey("07 E") ? "*" : "A";
+				tableGame[6][3] = wordsIncluded.containsKey("07 D") ? "*" : "D";
+				
+				System.out.print("| "+tableGame[line][colunm]+" ");
+				
+			}
+			System.out.println();
+			System.out.println(headLines);
+		}
+		IncludedWords addNew = new IncludedWords();
+		addNew.includeWord();
+	}
+}

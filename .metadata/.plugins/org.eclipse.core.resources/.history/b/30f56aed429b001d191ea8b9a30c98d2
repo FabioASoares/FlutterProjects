@@ -1,0 +1,16 @@
+package br.com.project.palavra.caca.gameFunctions;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class InsertWords{
+	public static Map<String, String> lambdaMap = new HashMap<String, String>();
+	
+	public static void insertWords() {
+		
+		lambdaMap.put("07 B", "A");
+		
+	}
+	public Map<String, String>
+
+}

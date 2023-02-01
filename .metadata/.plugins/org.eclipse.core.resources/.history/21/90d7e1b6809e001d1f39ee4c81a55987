@@ -1,0 +1,65 @@
+package br.com.project.palavra.caca.gameFunctions;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class IncludedWords {
+	static Map<String, String> wordsIncluded = new HashMap<String, String>();
+	public static Boolean reflectionFounded = false;
+	public static boolean lambdaFounded = false;
+	public static Boolean stringFounded = false;
+	public static Boolean wrapperFounded = false;
+	public static Boolean threadFounded = false;
+	public void includeWord(){
+		
+		// Palavra Reflection
+		IncludedWords.wordsIncluded.put("01 I", "R");
+		NewGame.wordsIncluded.put("02 I", "E");
+		NewGame.wordsIncluded.put("03 I", "F");
+		NewGame.wordsIncluded.put("04 I", "L");
+		NewGame.wordsIncluded.put("05 I", "E");
+		NewGame.wordsIncluded.put("06 I", "C");
+		NewGame.wordsIncluded.put("07 I", "T");
+		NewGame.wordsIncluded.put("08 I", "I");
+		NewGame.wordsIncluded.put("09 I", "O");
+		NewGame.wordsIncluded.put("10 I", "N");
+		
+		
+		
+		// Palavra Lambda
+		NewGame.wordsIncluded.put("07 B","L");
+		NewGame.wordsIncluded.put("06 B","A");
+		NewGame.wordsIncluded.put("05 B","M");
+		NewGame.wordsIncluded.put("04 B","B");
+		NewGame.wordsIncluded.put("03 B","D");
+		NewGame.wordsIncluded.put("02 B","A");
+		
+		// Palavra Thread
+		
+		NewGame.wordsIncluded.put("07 H", "H");
+		NewGame.wordsIncluded.put("07 G", "R");
+		NewGame.wordsIncluded.put("07 F", "E");
+		NewGame.wordsIncluded.put("07 E", "A");
+		NewGame.wordsIncluded.put("07 D", "D");
+		
+		// Palavra Wrapper
+		NewGame.wordsIncluded.put("10 A", "W");
+		NewGame.wordsIncluded.put("10 B", "R");
+		NewGame.wordsIncluded.put("10 C", "A");
+		NewGame.wordsIncluded.put("10 D", "P");
+		NewGame.wordsIncluded.put("10 E", "P");
+		NewGame.wordsIncluded.put("10 F", "E");
+		NewGame.wordsIncluded.put("10 G", "R");
+		
+		//
+		NewGame.wordsIncluded.put("08 J", "S");
+		NewGame.wordsIncluded.put("06 H", "R");
+		NewGame.wordsIncluded.put("05 G", "I");
+		NewGame.wordsIncluded.put("04 F", "N");
+		NewGame.wordsIncluded.put("03 E", "G");
+		
+		ValidationWord validated = new ValidationWord();
+		validated.validatedWord();
+		
+	}
+}

@@ -1,0 +1,60 @@
+package br.com.project.palavra.caca;
+
+import java.util.Scanner;
+
+import br.com.project.palavra.caca.gameFunctions.NewGame;
+
+public class HowToPlay extends Menu{
+
+	public void howToPlay() {
+		
+		// Instruções do jogo
+		
+		System.out.println(NewGame.headLines+"\n|               COMO JOGAR!               |\n"+NewGame.headLines);
+		System.out.println("| Bem vindo ao jogo Caca - Palavras |\n"+NewGame.headLines
+				+ "\n| O intuito deste jogo é estimular  |\n"
+				+ "| sua mente a encontrar todas as    |\n"
+				+ "| palavras do tabuleiro.            |\n"
+				+ "| São um total de 3 palavras que    |\n"
+				+ "| apareceram assim que voce iniciar |\n"
+				+ "| o jogo, cada tentativa errada ou  |\n"
+				+ "| correta ira ser contada e sera    |\n"
+				+ "| mostrada assim que voce finalizar |\n"
+				+ "| o jogo.                           |\n"
+				+ "| Para jogar e simples, sera        |\n"
+				+ "| solicitado a posicao inicial e    |\n"
+				+ "| final de cada palavra, seguido    |\n"
+				+ "| pela coluna ALFABETICA, e a linha |\n"
+				+ "| NUMERICA, caso tenha acertado,    |\n"
+				+ "| recebera um ponto e a jogada sera |\n"
+				+ "| contabilizada. BOM JOGO!          |\n"+NewGame.headLines);
+		
+		optionMenu();
+	}
+	public void optionMenu() {
+		
+		// Após aprender a jogar, o usuário é encaminhado para o menu de seleção abaixo
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("|  E ai, esta pornto pra iniciar?   |\n"+NewGame.headLines
+		         +     "\n|  1 - Bora nessa | 2 - Agora nao   |\n"+NewGame.headLines);
+		int option = scan.nextInt();
+		switch (option) {
+		case 1: 
+			NewGame startToPlay = new NewGame();
+			startToPlay.newGame();
+			break;
+		case 2:
+			System.out.println(NewGame.headLines+"\n| Hmm, entendo, te direcionaremos   |\n"
+					         + "| para o menu principal então       |\n"+NewGame.headLines);
+			Menu.menu();
+			break;
+		default:
+			System.out.println(NewGame.headLines+"\n| Opa! Nao existe essa opcao        |\n"+NewGame.headLines);
+			optionMenu();
+			break;
+		}
+		scan.close();
+	}
+
+}
